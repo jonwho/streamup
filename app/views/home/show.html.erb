@@ -1,4 +1,8 @@
 <% if current_user %>
+  <div class='jumbotron'>
+    <p class='lead'><%= "Welcome #{current_user.name.split.first}!" %></p>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/hX3j0sQ7ot8" frameborder="0" allowfullscreen></iframe>
+  </div>
 <% else %>
   <div class='jumbotron'>
     <p class='lead'>Sign in to see what others are saying!</p>
