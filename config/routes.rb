@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  # serve websocket cable requests in-process
+  mount ActionCable.server => '/cable'
+
   root 'home#show'
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
@@ -8,4 +11,7 @@ Rails.application.routes.draw do
   resource :home, only: [:show]
 
   get 'about', to: 'home#about'
+
+  resources :chat_rooms
+  resources :messages
 end

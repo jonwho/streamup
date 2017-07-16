@@ -4,4 +4,6 @@ redis: &redis
 
 development: *redis
 test: *redis
-production: *redis
+production:
+  adapter: redis
+  url: redis://redistogo:daaf6e2eea2e82013dc10180013054b7@koi.redistogo.com:11542/
