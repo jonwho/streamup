@@ -37,6 +37,7 @@ gem 'redis', '~> 3.0'
 gem 'bootstrap', git: 'https://github.com/twbs/bootstrap-rubygem'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
+gem 'faker'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

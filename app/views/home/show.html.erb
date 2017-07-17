@@ -1,6 +1,7 @@
 <% if current_user %>
   <div class='jumbotron'>
     <p class='lead'><%= "Welcome #{current_user.name.split.first}!" %></p>
+    <p>A random username has been generated for you. You are now <%= current_user.username %> !</p>
     <iframe width='560' height='315' src='https://www.youtube.com/embed/hX3j0sQ7ot8' frameborder='0' allowfullscreen></iframe>
     <%= render 'messages' %>
     <%= render 'message_form' %>
