@@ -1,24 +1,8 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Rails app to try out some OAuth and ActionCable.
 
-Things you may want to cover:
+Sign in with your google account. Watch the same video as others and use
+the real time chat supported by ActionCable.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Ta-da!
