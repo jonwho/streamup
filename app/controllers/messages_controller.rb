@@ -1,20 +1,21 @@
 class MessagesController < ApplicationController
+  before_action :logged_in?, only: [:create]
+
   def create
-    message = Message.new(message_params)
-    message.user = current_user
+    message = current_user.messages.build(message_params)
     if message.save
-      ActionCable.server.broadcast 'messages',
-        message: message.content,
-        user: message.user.email
-      head :ok
-    else
-      redirect_to home_path
+      ActionCable.server.broadcast 'room_channel',
+        message: render_message(message)
     end
   end
 
   private
 
   def message_params
-    params.require(:message).permit(:content, :chat_room_id)
+    params.require(:message).permit(:content)
+  end
+
+  def render_message(message)
+    render(partial: 'message', locals: { message: message })
   end
 end

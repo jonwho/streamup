@@ -3,15 +3,13 @@ Rails.application.routes.draw do
   mount ActionCable.server => '/cable'
 
   root 'home#show'
-  get 'auth/:provider/callback', to: 'sessions#create'
-  get 'auth/failure', to: redirect('/')
-  get 'signout', to: 'sessions#destroy', as: 'signout'
+  get 'auth/:provider/callback' => 'sessions#create'
+  get 'auth/failure' => redirect('/')
+  get 'signout' => 'sessions#destroy', as: 'signout'
 
   resources :sessions, only: [:create, :destroy]
-  resource :home, only: [:show]
 
-  get 'about', to: 'home#about'
+  get 'about' => 'home#about'
 
-  resources :chat_rooms
   resources :messages
 end

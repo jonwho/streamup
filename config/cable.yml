@@ -1,9 +1,9 @@
-redis: &redis
-  adapter: redis
-  url: redis://localhost:63791
+development:
+  adapter: async
 
-development: *redis
-test: *redis
+test:
+  adapter: async
+
 production:
   adapter: redis
   url: redis://redistogo:daaf6e2eea2e82013dc10180013054b7@koi.redistogo.com:11542/
