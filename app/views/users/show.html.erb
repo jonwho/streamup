@@ -1,0 +1,10 @@
+<div class='jumbotron'>
+  <p class='lead'><%= "These are all the messages sent by #{@username}" %></p>
+  <div id='messages-container' class='messages-container'>
+    <ul id='message-list' class='message-list'>
+      <% @messages.each do |message| %>
+        <%= render partial: 'messages/message', locals: { message: message } %>
+      <% end %>
+    </ul>
+  </div>
+</div>

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :sessions, only: [:create, :destroy]
 
   get 'about' => 'home#about'
+  get 'u/:username' => 'users#show'
 
   resources :messages
 end
